@@ -1,0 +1,15 @@
+# Window Glancer Configuration
+# Toggle a window between primary and secondary (glance) monitors
+
+# Regex pattern to match the window title
+window_title_regex = "iabecppcllaiiejcgcjpeechjecijlhp"
+
+# Name for the glance workspace on the secondary monitor
+glance_workspace_name = "glance"
+
+# Monitor names (use niri msg outputs to see available monitors)
+primary_monitor = "$MAIN_MONITOR"
+secondary_monitor = "$LAPTOP_MONITOR"
+
+# Primary workspace name
+primary_workspace = "$WS_MB"

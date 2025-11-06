@@ -1,0 +1,22 @@
+{
+  "webSearch": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "?",
+    "searchEngines": []
+  },
+  "commandRunner": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": ">",
+    "terminal": "ghostty",
+    "history": [
+      "niri msg action move-column-to-first"
+    ]
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": ";"
+  }
+}

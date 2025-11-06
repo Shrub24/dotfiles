@@ -1,0 +1,23 @@
+# Configuration for launch-music.py
+# This file contains all the static configuration that was previously hardcoded
+
+# Chrome/Brave app IDs to launch
+# These are the extension/app IDs for your music applications
+app_id_strings = [
+    "cinhimbnkkaeohfgghhklpknlkffjgod",
+    "eikjhbkpemdappjfcmdeeeamdpkgabmk",
+    "joebelnfkhbnjmikaboojahplobajcpg"
+]
+
+# Browser profile to use
+profile_suffix = "Profile_1"
+
+# Path to Brave browser executable
+brave_path = "/opt/brave.com/brave/brave-browser"
+
+# Workspace name where apps should be launched
+# Uses environment variable WS_HOME, falls back to this value if not set
+workspace_name = "$WS_HOME"
+
+# Timeout in seconds to wait for apps to launch
+wait_timeout_seconds = 5

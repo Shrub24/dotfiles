@@ -1,0 +1,46 @@
+[[profile]]
+name = "Home"
+
+
+
+[[profile.output]]
+enable = true
+search = ["m=0x0BBE", "s=0x00000005", "v=BOE"]
+mode = "2560x1600@240.002Hz"
+position = "3072,1167"
+scale = 1.5
+transform = "normal"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["m=Dell AW3821DW", "s=#HDEYMxgwAAgm", "v=Dell Inc."]
+mode = "3840x1600@143.998Hz"
+position = "0,0"
+scale = 1.25
+transform = "normal"
+adaptive_sync = false
+exec = [
+    "niri msg action focus-workspace $WS_HOME",
+    "niri msg action move-workspace-to-monitor $SHIKANE_OUTPUT_NAME",
+    "niri msg action move-workspace-to-index 1",
+    "niri msg action focus-workspace $WS_DEV",
+    "niri msg action move-workspace-to-monitor $SHIKANE_OUTPUT_NAME",
+    "niri msg action move-workspace-to-index 2",
+    "niri msg action focus-workspace $WS_MB",
+    "niri msg action move-workspace-to-monitor $SHIKANE_OUTPUT_NAME",
+    "niri msg action move-workspace-to-index 3",
+    "niri msg action focus-workspace $WS_DEV"
+]
+
+[[profile]]
+name = "Laptop-Only"
+
+[[profile.output]]
+enable = true
+search = ["m=0x0BBE", "s=0x00000005", "v=BOE"]
+mode = "2560x1600@240.002Hz"
+position = "0,0"
+scale = 1.5
+transform = "normal"
+adaptive_sync = false
