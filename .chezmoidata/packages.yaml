@@ -1,0 +1,59 @@
+packages:
+  pacman: # Used by CachyOS/Arch
+    - python
+    - python-pip
+    - git
+    - uv
+    - base-devel
+    - binutils
+    - inetutils
+    - xdg-user-dirs
+    - xdg-terminal-exec
+    - p7zip
+    - r
+    - zsh
+    - neofetch
+    - appimagelauncher
+    - openssl
+    - ttf-fira-code-nerd
+    - firefox
+    - nicotine+
+    - visual-studio-code-bin
+    - texlive-core
+    - docker
+    - containerd
+    - helm
+    - ddcutil
+    - sublime-merge
+    - cursor-bin
+    - libev
+    - ffmpeg
+    - mold
+    - brave-browser
+    - snapper
+    - btrfs-assistant
+    - maven
+    - flac
+    - jdk21-openjdk
+    - polkit-kde-agent
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-wlr
+    - go
+    - wdisplays
+    - shikane
+    - dms-shell-git
+    - cliphist
+    - matugen
+    - cursor
+
+
+  dnf: # Used by Fedora
+    - python3
+    - python3-pip
+    - git
+    - uv
+    - binutils
+    - coreutils # Common utility package
+    - xdg-user-dirs
+    - xdg-terminal-exec

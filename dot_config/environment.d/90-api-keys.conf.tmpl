@@ -1,0 +1,3 @@
+OPENAI_API_KEY={{ (bitwardenSecrets .secretIds.openaiApiKey .accessToken).value }}
+GEMINI_API_KEY={{ (bitwardenSecrets .secretIds.geminiApiKey .accessToken).value }}
+GITHUB_PAT={{ (bitwardenSecrets .secretIds.githubPat .accessToken).value }}

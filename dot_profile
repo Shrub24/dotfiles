@@ -1,0 +1,8 @@
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/saurabhj/.local/share/JetBrains/Toolbox/scripts"
+
+
+. "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"

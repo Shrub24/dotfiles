@@ -138,7 +138,7 @@ spawn-at-startup "dms" "run"
 spawn-at-startup "shikane"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "niriusd"
-spawn-at-startup "~/.config/niri/scripts/dynamic-float.py"
+spawn-at-startup "run-custom" "niri" "dynamic-float"
 spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
 
 environment {
@@ -294,8 +294,8 @@ window-rule {
 
 binds {
     // === CUSTOM SCRIPTS ===
-    Ctrl+Alt+L hotkey-overlay-title="Glance Window" { spawn "~/.config/niri/scripts/window-glancer.py"; }        
-    Mod+M hotkey-overlay-title="Music" { spawn "~/.config/niri/scripts/launch-music.py"; }
+    Ctrl+Alt+L hotkey-overlay-title="Glance Window" { spawn "run-custom" "niri" "window-glancer"; }        
+    Mod+M hotkey-overlay-title="Music" { spawn "run-custom" "niri" "launch-music"; }
 
     // === System & Overview ===
     Mod+D { spawn "niri" "msg" "action" "toggle-overview"; }

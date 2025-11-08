@@ -1,0 +1,18 @@
+# Dynamic Float Rules
+# Windows matching these rules will be automatically floated
+
+[[rules]]
+# Float Bitwarden window
+title = "Bitwarden"
+width = 1000
+height = 700
+centered = true
+
+#[[rules]]
+# Float windows with "float" in the title (case-insensitive)
+#title = "(?i)float"
+# Optional: Set fixed width/height
+# width = 800
+# height = 600
+# Optional: Center the window
+# centered = true

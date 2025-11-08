@@ -1,0 +1,1 @@
+{{ .chezmoi.sourceDir }}/symlinks/{{ .chezmoi.sourceFile | replaceAllRegex "symlink_(.*)\\.tmpl$" "$1" }}
