@@ -1,7 +1,7 @@
 packages:
   pacman: # Used by CachyOS/Arch
     - snapper
-    - btrfs-assistant
+    - flatpak
     - python
     - python-pip
     - git
@@ -10,30 +10,22 @@ packages:
     - binutils
     - inetutils
     - xdg-user-dirs
-    - xdg-terminal-exec
-    - p7zip
+    - 7zip
     - r
     - zsh
-    - neofetch
-    - appimagelauncher
+    - fastfetch
     - openssl
-    - ttf-fira-code-nerd
+    - ttf-firacode-nerd
     - firefox
     - nicotine+
-    - visual-studio-code-bin
     - texlive-core
     - docker
     - containerd
     - helm
     - ddcutil
-    - sublime-merge
-    - cursor-bin
     - libev
     - ffmpeg
     - mold
-    - brave-browser
-    - snapper
-    - btrfs-assistant
     - maven
     - flac
     - jdk21-openjdk
@@ -42,14 +34,20 @@ packages:
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-wlr
     - go
+  
+  aur:
+    - xdg-terminal-exec
+    - visual-studio-code-bin
+    - appimagelauncher
     - wdisplays
     - shikane
     - dms-shell-git
     - cliphist
     - matugen
-    - cursor
     - vesktop
-
+    - brave-bin
+    - sublime-merge
+    - cursor-bin
 
   dnf: # Used by Fedora
     - python3

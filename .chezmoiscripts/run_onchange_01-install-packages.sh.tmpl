@@ -13,7 +13,7 @@ echo "Starting System Package Installation..."
 
 # --- 2. ARCH / PACMAN Logic (CachyOS/Arch) ---
 # Checks for explicit 'arch' ID
-{{ if (or (eq $os_release.id "cachyos") (eq $os_release.id "arch") (and (hasKey $os_release "idLike") (has "arch" $os_release.idLike))) -}}
+{{ if (or (eq $os_release.id "cachyos") (eq $os_release.id "arch") (and (hasKey $os_release "idLike") (eq "arch" $os_release.idLike))) -}}
 echo "• Detected Arch/CachyOS: Installing with Pacman •"
 
 # Get official Pacman list

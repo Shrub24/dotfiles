@@ -10,7 +10,7 @@ if ! command -v bws &> /dev/null; then
     ARCH="x86_64"
     # Download and install bws
     BWS_VERSION="1.0.0"  # Update this to the latest version
-    BWS_URL="https://github.com/bitwarden/sdk-sm/releases/download/bws-v${BWS_VERSION}/bws-${AARCH}-unknown-linux-gnu-1.0.0.zip"
+    BWS_URL="https://github.com/bitwarden/sdk-sm/releases/download/bws-v${BWS_VERSION}/bws-${ARCH}-unknown-linux-gnu-1.0.0.zip"
     
     TMP_DIR=$(mktemp -d)
     cd "$TMP_DIR"
