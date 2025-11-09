@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/saurabhj/Applications/OneDriveGUI-1.2.2-x86_64.AppImage
+Name=OneDriveGUI
+Comment=Start OneDrive GUI on login
+Terminal=false
+StartupNotify=false

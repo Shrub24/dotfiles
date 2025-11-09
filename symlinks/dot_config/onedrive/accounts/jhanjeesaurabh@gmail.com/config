@@ -1,0 +1,5 @@
+check_nosync = "true"
+disable_notifications = "true"
+skip_symlinks = "true"
+skip_dotfiles = "true"
+

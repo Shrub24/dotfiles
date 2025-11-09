@@ -1,0 +1,39 @@
+[Desktop Entry]
+X-AppImage-Arch=x86_64
+X-AppImage-Version=1.2.2
+X-AppImage-Name=OneDriveGUI
+Name=OneDriveGUI (1.2.2)
+Exec=/home/saurabhj/Applications/OneDriveGUI-1.2.2-x86_64_d9ab286e4ec42b3279bb839a9c96766e.AppImage
+Icon=appimagekit_a72de9d03b3e2dcffac97f4270e07772_OneDriveGUI
+Type=Application
+Terminal=false
+Categories=Utility;
+Comment=
+
+TryExec=/home/saurabhj/Applications/OneDriveGUI-1.2.2-x86_64_d9ab286e4ec42b3279bb839a9c96766e.AppImage
+X-AppImage-Old-Icon=OneDriveGUI
+X-AppImage-Old-Name=OneDriveGUI
+X-AppImage-Identifier=a72de9d03b3e2dcffac97f4270e07772
+Actions=AppImageLauncher-Remove-AppImage;
+X-AppImageLauncher-Version=3.0.0-alpha-4 (git commit 0bcc75d), built on 2025-09-07 21:26:00 UTC
+
+[Desktop Action AppImageLauncher-Remove-AppImage]
+Name=Delete this AppImage
+Icon=AppImageLauncher
+Exec=/opt/appimagelauncher.AppDir/usr/lib/x86_64-linux-gnu/appimagelauncher/remove "/home/saurabhj/Applications/OneDriveGUI-1.2.2-x86_64_d9ab286e4ec42b3279bb839a9c96766e.AppImage"
+Name[ast]=Desaniciar AppImage del sistema
+Name[cs]=Odebrat AppImage ze systému
+Name[de]=Dieses AppImage löschen
+Name[en]=Delete this AppImage
+Name[es]=Eliminar Appimage del Sistema
+Name[fr]=Supprimer cette AppImage
+Name[it]=Rimuovi questa AppImage
+Name[ko]=이 AppImage 삭제
+Name[nb_NO]=Slett AppImage
+Name[nl]=AppImage deïnstalleren
+Name[pl]=Usuń AppImage z systemu
+Name[pt]=Remover AppImage do sistema
+Name[pt_BR]=Remover AppImage do sistema
+Name[ru]=Удалить AppImage
+Name[tr]=Bu AppImage uygulamasını sil
+Name[zh_Hans]=删除此 AppImage

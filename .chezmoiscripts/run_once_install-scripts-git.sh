@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+mkdir -p "$HOME/Projects"
 DEV_PROJECTS_DIR="$HOME/Projects"
 SCRIPT_REPO_DIR="$DEV_PROJECTS_DIR/custom-scripts"
 SCRIPT_REPO_URL="https://github.com/Shrub24/custom-scripts.git"

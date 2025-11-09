@@ -1,5 +1,7 @@
 packages:
   pacman: # Used by CachyOS/Arch
+    - snapper
+    - btrfs-assistant
     - python
     - python-pip
     - git
@@ -46,6 +48,7 @@ packages:
     - cliphist
     - matugen
     - cursor
+    - vesktop
 
 
   dnf: # Used by Fedora
@@ -57,3 +60,12 @@ packages:
     - coreutils # Common utility package
     - xdg-user-dirs
     - xdg-terminal-exec
+
+
+  flatpak:
+    - com.stremio.Stremio
+    - com.bitwarden.desktop
+    - com.github.tchx84.Flatseal
+    - com.obsproject.Studio
+    - org.gimp.GIMP
+    

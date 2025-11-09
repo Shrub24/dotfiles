@@ -1,0 +1,54 @@
+#!/bin/bash
+# Installs core system dependencies based on the OS.
+set -e
+
+# packages hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+
+echo "Starting System Package Installation..."
+
+# --- 1. Define Variables ---
+{{ $packages := .packages }}
+{{ $os_release := .chezmoi.osRelease }}
+
+
+# --- 2. ARCH / PACMAN Logic (CachyOS/Arch) ---
+# Checks for explicit 'arch' ID
+{{ if (or (eq $os_release.id "cachyos") (eq $os_release.id "arch") (and (hasKey $os_release "idLike") (has "arch" $os_release.idLike))) -}}
+echo "• Detected Arch/CachyOS: Installing with Pacman •"
+
+# Get official Pacman list
+{{ $pacman_packages := index $packages "pacman" }}
+if [ {{ len $pacman_packages }} -gt 0 ]; then
+  # 2a. Run System Update & Install Core Packages
+  sudo pacman -Syu --noconfirm
+  sudo pacman -S --noconfirm {{ $pacman_packages | join " " }}
+fi
+
+# 2b. AUR Backup Logic (Always runs on Arch, assuming yay/paru are already installed)
+echo "• Checking for AUR dependencies... •"
+{{ $aur_packages := index $packages "aur" }}
+if [ {{ len $aur_packages }} -gt 0 ] && command -v yay &> /dev/null; then
+  yay --noconfirm -S {{ $aur_packages | join " " }}
+fi
+
+
+# --- 3. FEDORA / DNF Logic ---
+# Checks for explicit 'fedora' ID
+{{ else if eq $os_release.id "fedora" -}}
+echo "• Detected Fedora: Installing with DNF •"
+
+# Get DNF list
+{{ $dnf_packages := index $packages "dnf" }}
+if [ {{ len $dnf_packages }} -gt 0 ]; then
+  # Run System Update & Install Core Packages
+  sudo dnf update -y
+  sudo dnf install -y {{ $dnf_packages | join " " }}
+fi
+
+
+# --- 4. UNSUPPORTED ---
+{{ else -}}
+echo "Warning: Package installation skipped for unsupported OS ({{ $os_release.id }}). Check your packages.yaml keys."
+{{ end -}}
+
+echo "Package installation complete."
