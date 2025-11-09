@@ -20,15 +20,15 @@ echo "• Detected Arch/CachyOS: Installing with Pacman •"
 {{ $pacman_packages := index $packages "pacman" }}
 if [ {{ len $pacman_packages }} -gt 0 ]; then
   # 2a. Run System Update & Install Core Packages
-  sudo pacman -Syu --noconfirm
-  sudo pacman -S --noconfirm {{ $pacman_packages | join " " }}
+  sudo pacman -Syu --noconfirm --needed
+  sudo pacman -S --noconfirm {{ $pacman_packages | join " " }} --needed
 fi
 
 # 2b. AUR Backup Logic (Always runs on Arch, assuming yay/paru are already installed)
 echo "• Checking for AUR dependencies... •"
 {{ $aur_packages := index $packages "aur" }}
 if [ {{ len $aur_packages }} -gt 0 ] && command -v yay &> /dev/null; then
-  yay --noconfirm -S {{ $aur_packages | join " " }}
+  yay --noconfirm -S {{ $aur_packages | join " " }} --needed
 fi
 
 
