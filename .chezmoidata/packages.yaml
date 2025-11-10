@@ -37,6 +37,8 @@ packages:
     - yazi
     - dolphin
     - zoxide
+    - easyeffects
+    - btop
       
   aur:
     - xdg-terminal-exec
@@ -53,7 +55,7 @@ packages:
     - cursor-bin
     - antidote-zsh
 
-  dnf: # Used by Fedora
+  dnf: 
     - python3
     - python3-pip
     - git
@@ -69,5 +71,5 @@ packages:
     - com.bitwarden.desktop
     - com.github.tchx84.Flatseal
     - com.obsproject.Studio
-    - org.gimp.GIMP
+    - org.gimp.GIMPe
     

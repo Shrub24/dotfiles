@@ -31,6 +31,7 @@ ohmyzsh/ohmyzsh path:plugins/ssh
 ohmyzsh/ohmyzsh path:plugins/zsh-interactive-cd
 ohmyzsh/ohmyzsh path:plugins/ssh-agent
 
+jeffreytse/zsh-vi-mode
 fdellwing/zsh-bat
 ptavares/zsh-direnv
 ajeetdsouza/zoxide
