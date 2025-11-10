@@ -1,0 +1,40 @@
+{
+    "name": "Bonusbank HorsePower",
+    "version": "4.5.0",
+    "version_name": "4.5.0",
+    "manifest_version": 3,
+    "description": "Bonusbank HorsePower",
+    "icons": {
+        "16": "images/icons/icon-16.png",
+        "128": "images/icons/icon-128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "incognito": "split",
+    "permissions": [
+        "alarms",
+        "tabs",
+        "storage",
+        "contextMenus",
+        "management",
+        "webRequest",
+        "scripting",
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "options_ui": {
+        "page": "index.html",
+        "open_in_tab": true
+    },
+    "action": {
+        "default_icon": {
+            "19": "images/icons/icon-19.png",
+            "38": "images/icons/icon-38.png"
+        },
+        "default_title": "Bonusbank"
+    }
+}

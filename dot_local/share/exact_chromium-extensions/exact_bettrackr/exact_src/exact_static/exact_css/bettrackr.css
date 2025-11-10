@@ -1,0 +1,273 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+  --bettrackr-blue: #0f0f3f;
+  --bettrackr-blue-hover: #292959;
+  --bettrackr-blue-disabled: #37375f;
+  --bettrackr-green: #6ee81f;
+  --bettrackr-green-hover: #92f555f8;
+  --bettrackr-green-disabled: #7e837bf8;
+  --bettrackr-red: #ff4f4f;
+  --bettrackr-red-hover: #ff7474;
+  --bettrackr-red-disabled: #ff9494;
+  --bettrackr-grey: #6c757d;
+  --bettrackr-grey-hover: #5a6268;
+  --bettrackr-grey-disabled: #ced4da;
+}
+
+/* ------------- HEADER ----------------- */
+
+#bettrackr-header {
+  background-color: var(--bettrackr-blue);
+}
+
+/* ------------- BODY ----------------- */
+#bettrackr-ext-body {
+  font-family: "Open Sans", sans-serif;
+  background: #f6f9ff;
+  color: var(--bettrackr-blue);
+  /* margin: 10px;
+     padding: 10px; */
+  width: 400px;
+}
+
+#bettrackr-ext-body a {
+  /* color: var(--bettrackr-blue); */
+  text-decoration: none;
+}
+
+#bettrackr-ext-body a:hover {
+  /* color: var(--bettrackr-blue-hover); */
+  text-decoration: underline;
+}
+
+/* ------------- FOOTER ----------------- */
+
+/* buttons */
+.btn-primary {
+  --bs-btn-color: var(--bettrackr-green) !important;
+  --bs-btn-bg: var(--bettrackr-blue) !important;
+  --bs-btn-border-color: var(--bettrackr-blue) !important;
+  --bs-btn-hover-color: var(--bettrackr-green) !important;
+  --bs-btn-hover-bg: var(--bettrackr-blue-hover) !important;
+  --bs-btn-hover-border-color: var(--bettrackr-blue) !important;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+  --bs-btn-active-color: var(--bettrackr-green) !important;
+  --bs-btn-active-bg: var(--bettrackr-blue) !important;
+  --bs-btn-active-border-color: var(--bettrackr-blue) !important;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+  --bs-btn-disabled-color: var(--bettrackr-green) !important;
+  --bs-btn-disabled-bg: var(--bettrackr-blue-disabled) !important;
+  --bs-btn-disabled-border-color: var(--bettrackr-green) !important;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bettrackr-blue); /* Primary button text color */
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(
+    --bettrackr-blue
+  ); /* Primary button border color */
+  --bs-btn-hover-color: var(--bettrackr-green); /* Text color on hover */
+  --bs-btn-hover-bg: var(
+    --bettrackr-blue-hover
+  ); /* Background color on hover */
+  --bs-btn-hover-border-color: var(
+    --bettrackr-blue-hover
+  ); /* Border color on hover */
+  --bs-btn-focus-shadow-rgb: 15, 15, 63; /* Adjusted focus shadow color */
+  --bs-btn-active-color: var(--bettrackr-blue); /* Text color when active */
+  --bs-btn-active-bg: var(--bettrackr-blue); /* Background color when active */
+  --bs-btn-active-border-color: var(
+    --bettrackr-blue
+  ); /* Border color when active */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Default shadow */
+  --bs-btn-disabled-color: var(
+    --bettrackr-blue-disabled
+  ); /* Muted color for disabled button text */
+  --bs-btn-disabled-bg: transparent; /* Keep background transparent when disabled */
+  --bs-btn-disabled-border-color: var(
+    --bettrackr-blue-disabled
+  ); /* Muted border when disabled */
+  --bs-gradient: none;
+}
+.btn-secondary {
+  --bs-btn-color: var(--bettrackr-blue);
+  --bs-btn-bg: var(--bettrackr-grey);
+  --bs-btn-border-color: var(--bettrackr-blue);
+  --bs-btn-hover-color: var(--bettrackr-blue);
+  --bs-btn-hover-bg: var(--bettrackr-grey-hover);
+  --bs-btn-hover-border-color: var(--bettrackr-blue-hover);
+  --bs-btn-active-color: var(--bettrackr-blue);
+  --bs-btn-active-bg: var(--bettrackr-grey);
+  --bs-btn-active-border-color: var(--bettrackr-blue);
+  --bs-btn-disabled-color: var(--bettrackr-blue-hover);
+  --bs-btn-disabled-bg: var(--bettrackr-grey-disabled);
+  --bs-btn-disabled-border-color: var(--bettrackr-blue-disabled);
+}
+.btn-outline-secondary {
+  --bs-btn-color: var(--bettrackr-green); /* Primary button text color */
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(
+    --bettrackr-green
+  ); /* Primary button border color */
+  --bs-btn-hover-color: var(--bettrackr-green); /* Text color on hover */
+  --bs-btn-hover-bg: var(
+    --bettrackr-blue-hover
+  ); /* Background color on hover */
+  --bs-btn-hover-border-color: var(
+    --bettrackr-green
+  ); /* Border color on hover */
+  --bs-btn-focus-shadow-rgb: 15, 15, 63; /* Adjusted focus shadow color */
+  --bs-btn-active-color: var(--bettrackr-green); /* Text color when active */
+  --bs-btn-active-bg: var(
+    --bettrackr-blue-hover
+  ); /* Background color when active */
+  --bs-btn-active-border-color: var(
+    --bettrackr-green
+  ); /* Border color when active */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Default shadow */
+  --bs-btn-disabled-color: var(
+    --bettrackr-blue
+  ); /* Muted color for disabled button text */
+  --bs-btn-disabled-bg: var(
+    --bettrackr-green-disabled
+  ); /* Keep background transparent when disabled */
+  --bs-btn-disabled-border-color: var(
+    --bettrackr-blue-disabled
+  ); /* Muted border when disabled */
+  --bs-gradient: none;
+}
+
+.btn-success {
+  --bs-btn-color: var(--bettrackr-blue);
+  --bs-btn-bg: var(--bettrackr-green);
+  --bs-btn-border-color: var(--bettrackr-blue);
+  --bs-btn-hover-color: var(--bettrackr-blue);
+  --bs-btn-hover-bg: var(--bettrackr-green-hover);
+  --bs-btn-hover-border-color: var(--bettrackr-green-hover);
+  --bs-btn-active-color: var(--bettrackr-blue);
+  --bs-btn-active-bg: var(--bettrackr-green);
+  --bs-btn-active-border-color: var(--bettrackr-blue);
+  --bs-btn-disabled-color: var(--bettrackr-blue-disabled);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--bettrackr-blue-disabled);
+}
+
+.btn-danger {
+  --bs-btn-color: var(--bettrackr-blue);
+  --bs-btn-bg: var(--bettrackr-red);
+  --bs-btn-border-color: var(--bettrackr-blue);
+  --bs-btn-hover-color: var(--bettrackr-blue);
+  --bs-btn-hover-bg: var(--bettrackr-red-hover);
+  --bs-btn-hover-border-color: var(--bettrackr-blue-hover);
+  --bs-btn-active-color: var(--bettrackr-blue);
+  --bs-btn-active-bg: var(--bettrackr-red);
+  --bs-btn-active-border-color: var(--bettrackr-blue);
+  --bs-btn-disabled-color: var(--bettrackr-blue-disabled);
+  --bs-btn-disabled-bg: var(--bettrackr-red-disabled);
+  --bs-btn-disabled-border-color: var(--bettrackr-blue-disabled);
+}
+
+/* Light Backgrounds */
+.bg-primary-light {
+  background-color: #cfe2ff;
+  border-color: #cfe2ff;
+}
+
+.bg-secondary-light {
+  background-color: #e2e3e5;
+  border-color: #e2e3e5;
+}
+
+.bg-success-light {
+  background-color: #d1e7dd;
+  border-color: #d1e7dd;
+}
+
+.bg-danger-light {
+  background-color: #f8d7da;
+  border-color: #f8d7da;
+}
+
+.bg-warning-light {
+  background-color: #fff3cd;
+  border-color: #fff3cd;
+}
+
+.bg-info-light {
+  background-color: #cff4fc;
+  border-color: #cff4fc;
+}
+
+.bg-dark-light {
+  background-color: #d3d3d4;
+  border-color: #d3d3d4;
+}
+
+/* Close Button */
+.btn-close {
+  background-size: 25%;
+}
+
+.btn-close:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+a.list-group-item-action  {
+  --bs-list-group-action-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+}
+a.list-group-item {
+  --bs-list-group-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+}
+
+.card-header {
+  background-color: var(--bettrackr-blue);
+  color: var(--bettrackr-green);
+}
+
+/* Accordion header */
+.accordion-button {
+  background-color: var(--bettrackr-blue) !important;
+  color: var(--bettrackr-green) !important;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--bettrackr-blue-hover) !important;
+  color: var(--bettrackr-green) !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.accordion-item {
+  border: 1px solid var(--bettrackr-blue) !important;
+  border-radius: 0.25rem;
+}
+
+/* Accordion inner list group */
+.accordion-body {
+  padding: 0 !important; /* Matches list-group flush */
+}
+
+.accordion .list-group-item {
+  background-color: white;
+  color: var(--bettrackr-blue);
+  border: none;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.875rem;
+}
+
+.accordion .list-group-item:hover {
+  background-color: #f8f9fa;
+}

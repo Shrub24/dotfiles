@@ -1,0 +1,240 @@
+<!-- <h1 class="text-center mb-3">Welcome there, <span id="username"></span></h1>
+<p>Currently supported bookmakers:</p>
+<ul>
+  <li>
+    <a href="https://www.sportsbet.com.au/account/bet_history" target="_blank"
+      >Sportsbet</a
+    >
+  </li>
+  <li>
+    <a href="https://www.tab.com.au/accounts/my-bets/bets" target="_blank"
+      >Tab</a
+    >
+  </li>
+</ul>
+<button id="track-all-btn" class="btn btn-outline-secondary w-100">
+  Track All
+</button> -->
+
+<style>
+
+  .home-card {
+    border-radius: 0.5rem;
+  }
+
+  .profit-card {
+    background-color: #f0f9eb;
+    border: 1px solid darkgreen;
+  }
+  .loss-card {
+    background-color: #fbeaea;
+    border: 1px solid darkred;
+  }
+
+  .stats-card {
+    background-color: #ebeef5;
+    border: 1px solid var(--bettrackr-blue);
+    border-radius: 0.5rem;
+  }
+  .bonus-card {
+    background-color: #abd9fa;
+    border: 1px solid var(--bettrackr-blue);
+    border-radius: 0.5rem;
+  }
+
+  .recent-bets-card {
+    border-radius: 0.5rem;
+  }
+
+  .bet-won {
+    background-color: var(--bettrackr-green);
+    color: var(--bettrackr-blue);
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .bet-lost {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .loss-text {
+    color: darkred;
+    font-weight: bold;
+  }
+
+  .profit-text {
+    color: darkgreen;
+    font-weight: bold;
+  }
+
+  .total-profit {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    color: var(--bettrackr-blue);
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+  }
+
+  .stat-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .edit-bet-link:hover {
+    cursor: pointer;
+  }
+
+  .btn-primary.active {
+    background-color: var(--bettrackr-green);
+    color: var(--bettrackr-blue);
+  }
+
+  @keyframes profit-update {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0px rgba(99, 160, 38, 0);
+    }
+    20% {
+      transform: scale(1.02);
+      box-shadow: 0 0 8px rgba(99, 160, 38, 0.6);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0px rgba(99, 160, 38, 0);
+    }
+  }
+
+  .profit-update-animate {
+    animation: profit-update 1s ease-out;
+  }
+
+  @keyframes loss-update {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0px rgba(200, 50, 50, 0);
+    }
+    20% {
+      transform: scale(1.02);
+      box-shadow: 0 0 8px rgba(200, 50, 50, 0.6);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0px rgba(200, 50, 50, 0); /* red */
+    }
+  }
+
+  .loss-update-animate {
+    animation: loss-update 1s ease-out;
+  }
+
+</style>
+
+<div class="row gy-2 mt-0 mb-2">
+  <div class="col-12">
+    <div id="profit-card" class="p-2 home-card">
+      <div class="row">
+        <div class="col-7">
+          <div class="small">Total Profit</div>
+          <div class="total-profit" id="total-profit-value"></div>
+          <!-- <a href="#" id="refresh-icon"><i class="bi bi-arrow-clockwise"></i></a> -->
+        </div>
+        <div class="col-5 text-end">
+          <div class="small">This Month</div>
+          <div
+            class="month-profit"
+            id="this-month-profit-value"
+          ></div>
+          <div class="d-flex justify-content-end align-items-center">
+            <div class="dropdown">
+              <button
+                class="badge bg-primary rounded-pill dropdown-toggle border-0 text-truncate w-100"
+                id="bonus-amount-button"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Bonus Balance: $<span id="total-bonus-amount">-</span>
+              </button>
+              <ul
+                id="bonus-amount-list"
+                class="dropdown-menu dropdown-menu-end text-end p-0"
+                style="min-width: auto"
+                aria-labelledby="bonus-amount-button"
+              ></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="stats-card p-2">
+      <div class="row">
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">Win Rate:</span>
+          <span class="stat-value" id="win-rate-value"></span>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">Bonus Retention:</span>
+          <span
+            class="stat-value"
+            id="bonus-retention-rate-value"
+          ></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">ROI:</span>
+          <span class="stat-value" id="roi-value"></span>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">Mug Bet Rate:</span>
+          <span class="stat-value" id="mug-bet-rate-value"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">Bets Placed:</span>
+          <span class="stat-value" id="bet-count-value"></span>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+          <span class="stat-label">Turnover:</span>
+          <span class="stat-value" id="turnover-value"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Bets Card -->
+<div class="card recent-bets-card mb-2">
+  <div class="card-header py-1 px-2">
+    <div class="d-flex justify-content-between align-items-center">
+      <span>Bets</span>
+      <div
+        class="btn-group btn-group-sm"
+        style="border: 1px solid var(--bettrackr-green)"
+        role="group"
+        aria-label="Bet View Toggle"
+      >
+        <button type="button" class="btn btn-primary active" id="pending-btn">
+          Pending
+          <span class="badge bg-danger" id="pending-bet-count-value"></span>
+        </button>
+        <button type="button" class="btn btn-primary" id="recent-btn">
+          Recently Resulted
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush" id="recent-bets-ul"></ul>
+</div>

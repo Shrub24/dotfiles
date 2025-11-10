@@ -1,0 +1,111 @@
+{
+  "manifest_version": 3,
+  "name": "BetTrackr",
+  "version": "2.4.0",
+  "author": "BetTrackr Pty Ltd",
+  "description": "Adds Bet Tracking funcitonality to popular bookmaker websites.",
+  "permissions": ["scripting", "activeTab", "storage", "tabs"],
+  "host_permissions": ["https://bettrackr.com.au/*"],
+  "homepage_url": "https://bettrackr.com.au",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8SEH3KuDct4wETVupufjWnWoYiaJartrSyF8456thoIkrPWUu9elPROLt8ZtLT9gpLBaY0XQWhFQ//+B3VADYJEZkzeXI0OZq73VBx44OIWc8LDqeVi/Devx6cN8j74CaZ1pXRj118SLG0B9dkJVY4FqHdCTB3HbOm4n/KPBrS6szb+gZe169l8ZuOZlXsYLNLYdvtzAl9U3xSb+vGiL69+9byW7OttFAMRX7vdOXYbdwVOaDYAPmVMDFXMKP3xKwbKce1vZYrYyWQmPSBhXoc7o6sPWB7S7g5SVm8CeSOy4FDrxTfefyGAfh/+AgowUDJxBxlSDxS73iAMkox/FMwIDAQAB",
+  "background": {
+    "service_worker": "src/content/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.sportsbet.com.au/*",
+        "https://www.tab.com.au/*",
+        "https://www.betfair.com.au/exchange/*",
+        "https://www.neds.com.au/*",
+        "https://www.betr.com.au/*",
+        "https://pointsbet.com.au/*",
+        "https://www.tabtouch.com.au/*",
+        "https://www.tabtouch.mobi/*",
+        "https://www.ladbrokes.com.au/*",
+        "https://www.unibet.com.au/*"
+      ],
+      "js": [
+        "src/static/js/jquery.min.js",
+
+        "src/content/bookmakers/util.js",
+
+        "src/content/bookmakers/config/sportsbet.js",
+        "src/content/bookmakers/config/tab.js",
+        "src/content/bookmakers/config/betfair.js",
+        "src/content/bookmakers/config/neds.js",
+        "src/content/bookmakers/config/betr.js",
+        "src/content/bookmakers/config/pointsbet.js",
+        "src/content/bookmakers/config/tabtouch.js",
+        "src/content/bookmakers/config/ladbrokes.js",
+        "src/content/bookmakers/config/unibet.js",
+
+        "src/content/bookmakers/button-manager.js",
+
+        "src/content/bookmakers/main.js"
+      ],
+      "css": [
+        "src/static/css/bettrackr.css",
+        "src/static/css/button.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://bonusbank.com.au/dutch-calculator/*"
+      ],
+      "js": [
+        "src/static/js/jquery.min.js",
+        "src/content/bonusbank/pages/dutch-calculator.js",
+        "src/content/bonusbank/bonusbank.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://bonusbank.com.au/matched-betting-calculator-australia/*"
+      ],
+      "js": [
+        "src/static/js/jquery.min.js",
+        "src/content/bonusbank/pages/basic-back-lay.js",
+        "src/content/bonusbank/bonusbank.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://bonusbank.com.au/advanced-calculator/*"
+      ],
+      "js": [
+        "src/static/js/jquery.min.js",
+        "src/content/bonusbank/pages/advanced-back-lay.js",
+        "src/content/bonusbank/bonusbank.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://bonusbank.com.au/two-up-software/*"
+      ],
+      "js": [
+        "src/static/js/jquery.min.js",
+        "src/content/bonusbank/pages/2up.js",
+        "src/content/bonusbank/bonusbank.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "src/ui/layout.html",
+    "default_icon": "src/assets/main_app_logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/static/css/fonts/*"
+      ],
+      "matches": [
+        "https://www.sportsbet.com.au/*",
+        "https://www.tab.com.au/*",
+        "https://www.betfair.com.au/*",
+        "https://bonusbank.com.au/*"
+      ]
+    }
+  ]
+}

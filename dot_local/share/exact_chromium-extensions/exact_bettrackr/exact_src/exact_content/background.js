@@ -1,0 +1,6 @@
+/*!
+ * BetTrackr Chrome Extension (c) 2025 BetTrackr Pty Ltd
+ * Licensed for use with a valid BetTrackr account only.
+ * Reverse engineering or modification is prohibited.
+ */
+import{importBonusbank as a,createBet as e,isLoggedIn as t,fetchEvent as n,getUser as o,updateBookmakerBalance as c}from"../shared.js";chrome.runtime.onMessage.addListener(((r,s,i)=>{const d=r.action;if(d){if("openBetPage"===d)l=r.bet_data,chrome.storage.local.set({bettrackrBetData:l,page:"bet"},(()=>{chrome.action.openPopup()}));else if("trackAll"===d)chrome.tabs.query({active:!0,currentWindow:!0},(a=>{if(a.length>0){const e=a[0].id;chrome.tabs.sendMessage(e,{action:"trackAll"})}}));else{if("isLoggedIn"===d)return(async()=>{const a=await t();i(a)})(),!0;"copyBonusbankRow"===d?(async()=>{const e=r.data,t=r.tool,n=r.toolMode||"",o=await a(t,e,n);i(o)})():"createBet"===d?(async()=>{const a=r.data,t=await e(a);i(t)})():"fetchEvent"===d?(async()=>{const a=r.data,e=await n(a.is_racing,a.event_id,a.betfair_market_id,a.track,a.runner,a.event_name,a.event_date,a.sport,a.bookmaker);i(e)})():"getUser"===d?(async()=>{const a=await o();i(a)})():"updateBookmakerBalance"===d&&(async()=>{const{bookmaker:a,balance:e}=r.data,t=await c(a,e);i(t)})()}var l;return!0}}));
