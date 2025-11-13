@@ -8,7 +8,7 @@
   "commandRunner": {
     "enabled": true,
     "noTrigger": false,
-    "trigger": ">",
+    "trigger": ":!",
     "terminal": "ghostty",
     "history": [
       "niri msg action move-column-to-first"
@@ -18,5 +18,24 @@
     "enabled": true,
     "noTrigger": false,
     "trigger": ";"
+  },
+  "dankActions": {
+    "enabled": false
+  },
+  "dockerManager": {
+    "enabled": true,
+    "terminalApp": "ghostty --hold"
+  },
+  "worldClock": {
+    "enabled": true,
+    "timezones": [
+      {
+        "timezone": "Europe/London",
+        "label": "UK"
+      }
+    ]
+  },
+  "dankHooks": {
+    "enabled": true
   }
 }

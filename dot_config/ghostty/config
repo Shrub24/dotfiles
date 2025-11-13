@@ -1,12 +1,14 @@
 # Font Configuration
-font-size = 12
+font-size = 14
+font-family = "MapleMono"
+font-feature = +calt
 
 # Window Configuration
 window-decoration = false
 window-padding-x = 12
 window-padding-y = 12
-background-opacity = 0.90
-background-blur-radius = 32
+background-opacity = 0.85
+background-blur-radius = 64
 
 # Cursor Configuration
 cursor-style = block

@@ -49,7 +49,7 @@
       "id": "brightnessSlider",
       "enabled": true,
       "width": 50,
-      "deviceName": "ddc:i2c-20"
+      "deviceName": "ddc:i2c-15"
     },
     {
       "id": "wifi",
@@ -89,7 +89,20 @@
   "maxWorkspaceIcons": 3,
   "workspacesPerMonitor": true,
   "dwlShowAllTags": false,
-  "workspaceNameIcons": {},
+  "workspaceNameIcons": {
+    "home": {
+      "type": "icon",
+      "value": "home"
+    },
+    "dev": {
+      "type": "icon",
+      "value": "code"
+    },
+    "mb": {
+      "type": "icon",
+      "value": "auto_awesome"
+    }
+  },
   "waveProgressEnabled": true,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
@@ -99,7 +112,7 @@
   "runningAppsGroupByApp": false,
   "clockDateFormat": "",
   "lockDateFormat": "",
-  "mediaSize": 1,
+  "mediaSize": 0,
   "dankBarLeftWidgets": [
     "launcherButton",
     "workspaceSwitcher",
@@ -122,6 +135,10 @@
       "enabled": true
     },
     {
+      "id": "worldClock",
+      "enabled": true
+    },
+    {
       "id": "weather",
       "enabled": true
     }
@@ -136,8 +153,7 @@
     },
     {
       "id": "memUsage",
-      "enabled": true,
-      "minimumWidth": false
+      "enabled": true
     },
     "battery",
     "controlCenterButton"
@@ -150,10 +166,10 @@
   "weatherCoordinates": "40.7128,-74.0060",
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "vpnLastConnected": "",
-  "iconTheme": "candy-icons-master",
-  "launcherLogoMode": "apps",
+  "iconTheme": "Sweet-Rainbow",
+  "launcherLogoMode": "os",
   "launcherLogoCustomPath": "",
   "launcherLogoColorOverride": "",
   "launcherLogoColorInvertOnMode": false,
@@ -230,23 +246,32 @@
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 0,
-  "osdAlwaysShowValue": false,
+  "osdAlwaysShowValue": true,
   "powerActionConfirm": true,
+  "powerMenuActions": [
+    "reboot",
+    "logout",
+    "poweroff",
+    "lock",
+    "suspend",
+    "restart"
+  ],
+  "powerMenuDefaultAction": "logout",
   "customPowerActionLock": "",
-  "customPowerActionLogout": "",
+  "customPowerActionLogout": "uwsm stop",
   "customPowerActionSuspend": "",
   "customPowerActionHibernate": "",
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
   "updaterUseCustomCommand": false,
-  "updaterCustomCommand": "",
+  "updaterCustomCommand": "hi",
   "updaterTerminalAdditionalParams": "",
   "screenPreferences": {
     "dankBar": [
-      "DP-2"
+      "DP-2",
+      "DP-1"
     ],
     "dock": [
-      "DP-1",
       "DP-5"
     ],
     "osd": [
@@ -255,7 +280,7 @@
   },
   "showOnLastDisplay": {
     "dankBar": true,
-    "dock": true,
+    "dock": false,
     "osd": true
   },
   "configVersion": 1

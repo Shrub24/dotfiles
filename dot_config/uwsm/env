@@ -1,0 +1,6 @@
+export QT_QPA_PLATFORM="wayland"
+export ELECTRON_OZONE_PLATFORM_HINT="auto"
+export GTK_USE_PORTAL="1"
+export TERMINAL="wezterm"
+
+

@@ -131,33 +131,14 @@ overview {
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
-// See the binds section below for more spawn examples.
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
-spawn-at-startup "dms" "run"
-spawn-at-startup "shikane"
-spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
-spawn-at-startup "niriusd"
+spawn-at-startup "uwsm" "finalize" 
 spawn-at-startup "run-custom" "niri" "dynamic-float"
 spawn-at-startup "niri" "msg" "action" "focus-workspace" "main"
 
-environment {
-  XDG_CURRENT_DESKTOP "niri"
-  QT_QPA_PLATFORM "wayland"
-  ELECTRON_OZONE_PLATFORM_HINT "auto"
-  QT_QPA_PLATFORMTHEME "qt6ct"
-  QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
-  TERMINAL "ghostty"
-
-  MAIN_MONITOR "Dell Inc. Dell AW3821DW"
-  LAPTOP_MONITOR "eDP-1"
-  WS_DEV "dev"
-  WS_HOME "home"
-  WS_MB "mb"
-}
 hotkey-overlay {
     skip-at-startup
 }
+
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
@@ -242,6 +223,7 @@ window-rule {
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id="zoom"
+    match app-id="org.freedesktop.impl.portal"
     open-floating true
 }
 window-rule {
@@ -292,6 +274,10 @@ window-rule {
     open-floating true
 }
 
+cursor {
+    xcursor-theme "Bibata-Rainbow-Modern"
+}
+
 binds {
     // === CUSTOM SCRIPTS ===
     Ctrl+Alt+L hotkey-overlay-title="Glance Window" { spawn "run-custom" "niri" "window-glancer"; }        
@@ -303,7 +289,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     
     // === Application Launchers ===
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "wezterm"; }
     Mod+Space hotkey-overlay-title="Application Launcher" { 
         spawn "dms" "ipc" "call" "spotlight" "toggle"; 
     }
@@ -497,4 +483,4 @@ binds {
 }
 debug {
     honor-xdg-activation-with-invalid-serial
-}    
+}

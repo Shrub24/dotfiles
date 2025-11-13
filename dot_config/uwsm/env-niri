@@ -1,0 +1,11 @@
+export QT_QPA_PLATFORMTHEME="qt6ct"
+export QT_QPA_PLATFORMTHEME_QT6="qt6ct"
+export QT_STYLE_OVERRIDE="kvantum"
+
+export MAIN_MONITOR="Dell Inc. Dell AW3821DW"
+export LAPTOP_MONITOR="eDP-1"
+export WS_DEV="dev"
+export WS_HOME="home"
+export WS_MB="mb"
+
+export UWSM_FINALIZE_VARNAMES="NIRI_SOCKET"
