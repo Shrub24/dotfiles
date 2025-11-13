@@ -274,6 +274,13 @@ window-rule {
     open-floating true
 }
 
+blur {
+  on
+  passes 3
+  radius 12.0
+  noise 0.0
+}
+
 cursor {
     xcursor-theme "Bibata-Rainbow-Modern"
 }

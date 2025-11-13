@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Polkit KDE Agent
+Comment=Authentication agent for Polkit
+Exec=/usr/lib/polkit-kde-authentication-agent-1
+Type=Application
+Terminal=false

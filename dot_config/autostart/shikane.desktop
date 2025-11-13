@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Shikane
+Comment=Background helper
+Exec=shikane
+Type=Application
+Terminal=false

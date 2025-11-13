@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Niri Utils Daemon
+Comment=Helper daemon for Niri
+Exec=niriusd
+Type=Application
+Terminal=false

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Dank Material Shell
+Comment=DMS for Niri
+Exec=dms run
+Type=Application
+Terminal=false

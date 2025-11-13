@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Cliphist
+Comment=Clipboard History Manager
+Exec=sh -c 'wl-paste --watch cliphist store'
+Type=Application
+Terminal=false
