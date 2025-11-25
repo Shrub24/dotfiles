@@ -4,8 +4,6 @@
   "matugenScheme": "scheme-fidelity",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
-  "dankBarTransparency": 0.34,
-  "dankBarWidgetTransparency": 0.62,
   "popupTransparency": 1,
   "dockTransparency": 0.65,
   "widgetBackgroundColor": "sc",
@@ -18,7 +16,7 @@
   "customAnimationDuration": 500,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
-  "blurWallpaperOnOverview": true,
+  "blurWallpaperOnOverview": false,
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
   "showFocusedWindow": true,
@@ -36,9 +34,14 @@
   "showNotificationButton": true,
   "showBattery": true,
   "showControlCenterButton": true,
+  "showCapsLockIndicator": true,
   "controlCenterShowNetworkIcon": true,
   "controlCenterShowBluetoothIcon": true,
   "controlCenterShowAudioIcon": true,
+  "showPrivacyButton": true,
+  "privacyShowMicIcon": false,
+  "privacyShowCameraIcon": false,
+  "privacyShowScreenShareIcon": false,
   "controlCenterWidgets": [
     {
       "id": "volumeSlider",
@@ -113,55 +116,11 @@
   "clockDateFormat": "",
   "lockDateFormat": "",
   "mediaSize": 0,
-  "dankBarLeftWidgets": [
-    "launcherButton",
-    "workspaceSwitcher",
-    {
-      "id": "focusedWindow",
-      "enabled": true
-    }
-  ],
-  "dankBarCenterWidgets": [
-    {
-      "id": "music",
-      "enabled": true
-    },
-    {
-      "id": "clock",
-      "enabled": true
-    },
-    {
-      "id": "notificationButton",
-      "enabled": true
-    },
-    {
-      "id": "worldClock",
-      "enabled": true
-    },
-    {
-      "id": "weather",
-      "enabled": true
-    }
-  ],
-  "dankBarRightWidgets": [
-    "systemTray",
-    "clipboard",
-    {
-      "id": "cpuUsage",
-      "enabled": true,
-      "minimumWidth": false
-    },
-    {
-      "id": "memUsage",
-      "enabled": true
-    },
-    "battery",
-    "controlCenterButton"
-  ],
-  "dankBarWidgetOrder": [],
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
   "sortAppsAlphabetically": false,
+  "appLauncherGridColumns": 4,
+  "spotlightCloseNiriOverview": true,
   "weatherLocation": "Melbourne, VIC",
   "weatherCoordinates": "40.7128,-74.0060",
   "useAutoLocation": true,
@@ -205,9 +164,14 @@
   "loginctlLockIntegration": true,
   "launchPrefix": "",
   "brightnessDevicePins": {},
+  "wifiNetworkPins": {},
+  "bluetoothDevicePins": {},
+  "audioInputDevicePins": {},
+  "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
+  "terminalsAlwaysDark": false,
   "showDock": false,
   "dockAutoHide": true,
   "dockGroupByApp": true,
@@ -219,24 +183,6 @@
   "dockIconSize": 65,
   "dockIndicatorStyle": "line",
   "notificationOverlayEnabled": false,
-  "dankBarAutoHide": false,
-  "dankBarOpenOnOverview": true,
-  "dankBarVisible": true,
-  "dankBarSpacing": 0,
-  "dankBarBottomGap": 0,
-  "dankBarInnerPadding": 5,
-  "dankBarPosition": 0,
-  "dankBarSquareCorners": false,
-  "dankBarNoBackground": false,
-  "dankBarGothCornersEnabled": true,
-  "dankBarGothCornerRadiusOverride": false,
-  "dankBarGothCornerRadiusValue": 12,
-  "dankBarBorderEnabled": false,
-  "dankBarBorderColor": "surfaceText",
-  "dankBarBorderOpacity": 0.43,
-  "dankBarBorderThickness": 2,
-  "popupGapsAuto": true,
-  "popupGapsManual": 4,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
   "enableFprint": false,
@@ -247,16 +193,23 @@
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 0,
   "osdAlwaysShowValue": true,
+  "osdPosition": 5,
+  "osdVolumeEnabled": true,
+  "osdBrightnessEnabled": true,
+  "osdIdleInhibitorEnabled": true,
+  "osdMicMuteEnabled": true,
+  "osdCapsLockEnabled": true,
+  "osdPowerProfileEnabled": true,
   "powerActionConfirm": true,
   "powerMenuActions": [
     "reboot",
     "logout",
     "poweroff",
     "lock",
-    "suspend",
     "restart"
   ],
   "powerMenuDefaultAction": "logout",
+  "powerMenuGridLayout": false,
   "customPowerActionLock": "",
   "customPowerActionLogout": "uwsm stop",
   "customPowerActionSuspend": "",
@@ -264,8 +217,9 @@
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
   "updaterUseCustomCommand": false,
-  "updaterCustomCommand": "hi",
+  "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
+  "displayNameMode": "system",
   "screenPreferences": {
     "dankBar": [
       "DP-2",
@@ -283,5 +237,83 @@
     "dock": false,
     "osd": true
   },
-  "configVersion": 1
+  "configVersion": 2,
+  "barConfigs": [
+    {
+      "id": "default",
+      "name": "Main Bar",
+      "enabled": true,
+      "position": 0,
+      "screenPreferences": [
+        "all"
+      ],
+      "showOnLastDisplay": true,
+      "leftWidgets": [
+        "launcherButton",
+        "workspaceSwitcher",
+        {
+          "id": "focusedWindow",
+          "enabled": true
+        }
+      ],
+      "centerWidgets": [
+        {
+          "id": "music",
+          "enabled": true
+        },
+        {
+          "id": "clock",
+          "enabled": true
+        },
+        {
+          "id": "notificationButton",
+          "enabled": true
+        },
+        {
+          "id": "worldClock",
+          "enabled": true
+        },
+        {
+          "id": "weather",
+          "enabled": true
+        }
+      ],
+      "rightWidgets": [
+        "systemTray",
+        "clipboard",
+        {
+          "id": "cpuUsage",
+          "enabled": true,
+          "minimumWidth": false
+        },
+        {
+          "id": "memUsage",
+          "enabled": true
+        },
+        "battery",
+        "controlCenterButton"
+      ],
+      "spacing": 0,
+      "innerPadding": 5,
+      "bottomGap": 0,
+      "transparency": 0.34,
+      "widgetTransparency": 0.62,
+      "squareCorners": false,
+      "noBackground": false,
+      "gothCornersEnabled": true,
+      "gothCornerRadiusOverride": false,
+      "gothCornerRadiusValue": 12,
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
+      "borderOpacity": 0.43,
+      "borderThickness": 2,
+      "fontScale": 1.2500000000000002,
+      "autoHide": false,
+      "autoHideDelay": 250,
+      "openOnOverview": true,
+      "visible": true,
+      "popupGapsAuto": true,
+      "popupGapsManual": 4
+    }
+  ]
 }

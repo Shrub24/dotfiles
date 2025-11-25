@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=GMediaRender
 Comment=UPnP Media Renderer
-Exec=sh -c 'gmediarender -f "Shrub" -p 49494 --logfile "$HOME/.local/state/gmediarender.log" -d'
+Exec=sh -c 'gmediarender -f Shrub -p 49494 --logfile $HOME/.local/state/gmediarender.log-d'
 Type=Application
 Terminal=false

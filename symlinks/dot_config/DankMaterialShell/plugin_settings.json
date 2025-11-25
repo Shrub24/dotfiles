@@ -36,6 +36,7 @@
     ]
   },
   "dankHooks": {
-    "enabled": true
+    "enabled": false,
+    "wallpaperPath": "run-custom theme"
   }
 }

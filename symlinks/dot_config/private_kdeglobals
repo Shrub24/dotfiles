@@ -1,0 +1,180 @@
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=213,192,209
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=158,139,155
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=25,17,24
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Complementary]
+BackgroundAlternate=37,29,37
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Header]
+BackgroundAlternate=25,17,24
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Header][Inactive]
+BackgroundAlternate=25,17,24
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Selection]
+BackgroundAlternate=132,5,145
+BackgroundNormal=255,169,255
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=89,0,98
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=89,0,98
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Tooltip]
+BackgroundAlternate=25,17,24
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:View]
+BackgroundAlternate=33,25,33
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[Colors:Window]
+BackgroundAlternate=25,17,24
+BackgroundNormal=25,17,24
+DecorationFocus=255,169,255
+DecorationHover=255,169,255
+ForegroundActive=255,169,255
+ForegroundInactive=213,192,209
+ForegroundLink=214,200,116
+ForegroundNegative=255,180,171
+ForegroundNeutral=242,177,240
+ForegroundNormal=238,222,233
+ForegroundPositive=214,200,116
+ForegroundVisited=242,177,240
+
+[General]
+ColorScheme=DankMatugenLight
+TerminalApplication=/usr/bin/wezterm
+TerminalService=org.wezfurlong.wezterm.desktop
+XftHintStyle=hintslight
+XftSubPixel=none
+fixed=FiraCode Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[Icons]
+Theme=Sweet-Rainbow
+
+[KDE]
+LookAndFeelPackage=Sweet
+ShowDeleteCommand=false
+widgetStyle=qt6ct-style
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Date
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=144
+View Style=Simple
+currentActivity=e4b87ac4-a8b0-4bcf-a15d-499278fe0efb
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
+[WM]
+activeBackground=25,17,24
+activeBlend=238,222,233
+activeForeground=238,222,233
+inactiveBackground=25,17,24
+inactiveBlend=213,192,209
+inactiveForeground=213,192,209

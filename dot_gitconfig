@@ -9,10 +9,10 @@
 	defaultBranch = main
 [pull]
 	rebase = true
-[url "ssh://git@github.com/"]
-	insteadOf = "https://github.com/"
-[url "ssh://git@github.com:Shrub24/"]
-  insteadOf = "git://github.com/Shrub24/"
+; [url "ssh://git@github.com/"]
+; 	insteadOf = "https://github.com/"
+; [url "ssh://git@github.com:Shrub24/"]
+;   insteadOf = "git://github.com/Shrub24/"
 [branch]
   # Show most recently changed branches first
   sort = -committerdate
