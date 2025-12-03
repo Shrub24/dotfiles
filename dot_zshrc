@@ -183,6 +183,8 @@ function zvm_after_init() {
   # fi
 }
 
+eval "$(zoxide init zsh)"
+
 source <(fzf --zsh)
 
 # pnpm
