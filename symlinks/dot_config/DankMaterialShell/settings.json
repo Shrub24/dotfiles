@@ -7,6 +7,7 @@
   "popupTransparency": 1,
   "dockTransparency": 0.65,
   "widgetBackgroundColor": "sc",
+  "widgetColorMode": "default",
   "cornerRadius": 11,
   "use24HourClock": true,
   "showSeconds": false,
@@ -38,6 +39,11 @@
   "controlCenterShowNetworkIcon": true,
   "controlCenterShowBluetoothIcon": true,
   "controlCenterShowAudioIcon": true,
+  "controlCenterShowVpnIcon": false,
+  "controlCenterShowBrightnessIcon": false,
+  "controlCenterShowMicIcon": false,
+  "controlCenterShowBatteryIcon": false,
+  "controlCenterShowPrinterIcon": false,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -91,6 +97,7 @@
   "showWorkspaceApps": false,
   "maxWorkspaceIcons": 3,
   "workspacesPerMonitor": true,
+  "showOccupiedWorkspacesOnly": false,
   "dwlShowAllTags": false,
   "workspaceNameIcons": {
     "home": {
@@ -139,7 +146,6 @@
   "monoFontFamily": "Fira Code",
   "fontWeight": 400,
   "fontScale": 1,
-  "dankBarFontScale": 1.2500000000000002,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 14,
@@ -162,6 +168,8 @@
   "lockBeforeSuspend": false,
   "preventIdleForMedia": false,
   "loginctlLockIntegration": true,
+  "fadeToLockEnabled": false,
+  "fadeToLockGracePeriod": 5,
   "launchPrefix": "",
   "brightnessDevicePins": {},
   "wifiNetworkPins": {},
@@ -195,12 +203,14 @@
   "osdAlwaysShowValue": true,
   "osdPosition": 5,
   "osdVolumeEnabled": true,
+  "osdMediaVolumeEnabled": true,
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
   "osdCapsLockEnabled": true,
   "osdPowerProfileEnabled": true,
-  "powerActionConfirm": true,
+  "powerActionConfirm": false,
+  "powerActionHoldDuration": 1,
   "powerMenuActions": [
     "reboot",
     "logout",
@@ -209,7 +219,7 @@
     "restart"
   ],
   "powerMenuDefaultAction": "logout",
-  "powerMenuGridLayout": false,
+  "powerMenuGridLayout": true,
   "customPowerActionLock": "",
   "customPowerActionLogout": "uwsm stop",
   "customPowerActionSuspend": "",
@@ -237,7 +247,6 @@
     "dock": false,
     "osd": true
   },
-  "configVersion": 2,
   "barConfigs": [
     {
       "id": "default",
@@ -315,5 +324,6 @@
       "popupGapsAuto": true,
       "popupGapsManual": 4
     }
-  ]
+  ],
+  "configVersion": 2
 }

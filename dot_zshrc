@@ -40,6 +40,11 @@ alias edit="nvim"
 alias vim="nvim"
 alias vi="nvim"
 alias cd="z"
+alias ls="eza"
+alias find="fd"
+alias cat="bat"
+alias grep="rg"
+
 
 # Path to your Oh My Zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
@@ -125,10 +130,25 @@ export EDITOR=nvim
 
 
 fzf-zoxide-insert-widget() {
-  selected_dir=$(zoxide query -l | fzf --height 40% --reverse)
+  # 1. Fetch directories from zoxide
+  # 2. Use fzf with a preview window (optional, requires eza/ls)
+  local selected_dir=$(zoxide query -l | fzf \
+    --height=40% \
+    --layout=reverse \
+    --border \
+    --prompt="Insert Path > " \
+    --preview 'eza --tree --level=1 --color=always {} 2>/dev/null || ls -1 --color=always {}' \
+    --preview-window=right:40%:wrap)
 
   if [[ -n "$selected_dir" ]]; then
-    LBUFFER+="$selected_dir"
+    # Check if we need to add a leading space
+    # (If buffer is not empty and doesn't end with a space)
+    if [[ -n "$LBUFFER" && "$LBUFFER" != *" " ]]; then
+      LBUFFER+=" "
+    fi
+    
+    # Append the directory
+    LBUFFER+="${selected_dir}"
   fi
 
   zle redisplay
@@ -136,7 +156,34 @@ fzf-zoxide-insert-widget() {
 
 zle -N fzf-zoxide-insert-widget
 
-bindkey '^[z' fzf-zoxide-insert-widget
+# Binding: Keeping your preference, but standard is usually Alt-c or similar
+bindkey -M viins '^f' fzf-zoxide-insert-widget
+bindkey -M vicmd '^f' fzf-zoxide-insert-widget
+
+function zvm_after_init() {
+  # 1. Bind your Custom Zoxide Widget (Insert Mode)
+  zvm_bindkey viins '^e' fzf-zoxide-insert-widget
+  
+  # 2. Restore Standard FZF bindings (Files & History)
+  # These often get killed by vi-mode. We explicitly bring them back.
+  
+  # Ctrl+T = FZF File Search (Insert Mode)
+  if zle -l fzf-file-widget; then
+    zvm_bindkey viins '^t' fzf-file-widget
+  fi
+
+  # Ctrl+R = FZF History Search (Insert Mode)
+  if zle -l fzf-history-widget; then
+    zvm_bindkey viins '^r' fzf-history-widget
+  fi
+  
+  # 3. Optional: Fix Autosuggestions (Accept with Ctrl+Space or Ctrl+f)
+  # if type autosuggest-accept > /dev/null; then
+  #   zvm_bindkey viins '^f' autosuggest-accept
+  # fi
+}
+
+source <(fzf --zsh)
 
 # pnpm
 export PNPM_HOME="/home/saurabhj/.local/share/pnpm"

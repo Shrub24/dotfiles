@@ -27,7 +27,7 @@
     "terminalApp": "ghostty --hold"
   },
   "worldClock": {
-    "enabled": true,
+    "enabled": false,
     "timezones": [
       {
         "timezone": "Europe/London",

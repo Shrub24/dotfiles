@@ -40,7 +40,7 @@ zsh-users/zsh-autosuggestions
 MichaelAquilina/zsh-you-should-use
 
 
-joshskidmore/zsh-fzf-history-search
+# joshskidmore/zsh-fzf-history-search
 ajeetdsouza/zoxide
 zsh-users/zsh-syntax-highlighting
 
