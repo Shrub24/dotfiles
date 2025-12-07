@@ -31,6 +31,8 @@ ohmyzsh/ohmyzsh path:plugins/ssh
 ohmyzsh/ohmyzsh path:plugins/zsh-interactive-cd
 # ohmyzsh/ohmyzsh path:plugins/ssh-agent
 
+Aloxaf/fzf-tab
+Freed-Wu/fzf-tab-source
 jeffreytse/zsh-vi-mode
 fdellwing/zsh-bat
 ptavares/zsh-direnv
@@ -38,7 +40,6 @@ ptavares/zsh-direnv
 zsh-users/zsh-completions path:src kind:fpath
 zsh-users/zsh-autosuggestions
 MichaelAquilina/zsh-you-should-use
-
 
 # joshskidmore/zsh-fzf-history-search
 ajeetdsouza/zoxide

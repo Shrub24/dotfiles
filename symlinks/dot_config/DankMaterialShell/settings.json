@@ -41,7 +41,7 @@
   "controlCenterShowAudioIcon": true,
   "controlCenterShowVpnIcon": false,
   "controlCenterShowBrightnessIcon": false,
-  "controlCenterShowMicIcon": false,
+  "controlCenterShowMicIcon": true,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
   "showPrivacyButton": true,
@@ -114,12 +114,14 @@
     }
   },
   "waveProgressEnabled": true,
+  "scrollTitleEnabled": true,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
   "keyboardLayoutNameCompactMode": false,
   "runningAppsCurrentWorkspace": false,
   "runningAppsGroupByApp": false,
+  "centeringMode": "index",
   "clockDateFormat": "",
   "lockDateFormat": "",
   "mediaSize": 0,
@@ -128,6 +130,7 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
+  "niriOverviewOverlayEnabled": true,
   "weatherLocation": "Melbourne, VIC",
   "weatherCoordinates": "40.7128,-74.0060",
   "useAutoLocation": true,
@@ -161,10 +164,12 @@
   "acLockTimeout": 0,
   "acSuspendTimeout": 0,
   "acSuspendBehavior": 0,
+  "acProfileName": "",
   "batteryMonitorTimeout": 0,
   "batteryLockTimeout": 0,
   "batterySuspendTimeout": 0,
   "batterySuspendBehavior": 0,
+  "batteryProfileName": "",
   "lockBeforeSuspend": false,
   "preventIdleForMedia": false,
   "loginctlLockIntegration": true,
@@ -188,13 +193,19 @@
   "dockSpacing": 10,
   "dockBottomGap": 10,
   "dockMargin": 0,
-  "dockIconSize": 65,
-  "dockIndicatorStyle": "line",
+  "dockIconSize": 60,
+  "dockIndicatorStyle": "circle",
+  "dockBorderEnabled": false,
+  "dockBorderColor": "surfaceText",
+  "dockBorderOpacity": 1,
+  "dockBorderThickness": 1,
   "notificationOverlayEnabled": false,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
   "enableFprint": false,
   "maxFprintTries": 3,
+  "lockScreenActiveMonitor": "all",
+  "lockScreenInactiveColor": "#000000",
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
@@ -209,6 +220,7 @@
   "osdMicMuteEnabled": true,
   "osdCapsLockEnabled": true,
   "osdPowerProfileEnabled": true,
+  "osdAudioOutputEnabled": true,
   "powerActionConfirm": false,
   "powerActionHoldDuration": 1,
   "powerMenuActions": [
@@ -254,7 +266,10 @@
       "enabled": true,
       "position": 0,
       "screenPreferences": [
-        "all"
+        {
+          "name": "DP-1",
+          "model": "Dell AW3821DW"
+        }
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
@@ -262,6 +277,10 @@
         "workspaceSwitcher",
         {
           "id": "focusedWindow",
+          "enabled": true
+        },
+        {
+          "id": "easyEffects",
           "enabled": true
         }
       ],
@@ -288,19 +307,37 @@
         }
       ],
       "rightWidgets": [
-        "systemTray",
-        "clipboard",
+        {
+          "id": "displayMirror",
+          "enabled": true
+        },
+        {
+          "id": "systemTray",
+          "enabled": true
+        },
+        {
+          "id": "clipboard",
+          "enabled": true
+        },
         {
           "id": "cpuUsage",
           "enabled": true,
-          "minimumWidth": false
+          "minimumWidth": true
         },
         {
           "id": "memUsage",
+          "enabled": true,
+          "showSwap": false,
+          "minimumWidth": true
+        },
+        {
+          "id": "battery",
           "enabled": true
         },
-        "battery",
-        "controlCenterButton"
+        {
+          "id": "controlCenterButton",
+          "enabled": true
+        }
       ],
       "spacing": 0,
       "innerPadding": 5,

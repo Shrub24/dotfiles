@@ -331,11 +331,19 @@ binds {
   // === Application Launchers ===
   Mod+T hotkey-overlay-title="Open Terminal" { spawn "wezterm"; }
   Mod+Space hotkey-overlay-title="Application Launcher" { 
-    spawn "dms" "ipc" "call" "spotlight" "toggle"; 
+    spawn "nc" "-U" "/run/user/1000/walker/walker.sock";
   }
   Mod+E hotkey-overlay-title="Open File Manager" { spawn "dolphin"; }
   Mod+V hotkey-overlay-title="Clipboard Manager" { 
-    spawn "dms" "ipc" "call" "clipboard" "toggle"; 
+    spawn "walker" "-m" "clipboard";
+  }
+
+  Mod+Slash hotkey-overlay-title="File Search" {
+    spawn "walker" "-m" "files";
+  }
+
+  Mod+U hotkey-overlay-title="Window Search" {
+    spawn "walker" "-m" "projects";
   }
 
   Mod+Comma hotkey-overlay-title="Settings" { 
@@ -441,8 +449,8 @@ binds {
   // === Workspace Navigation ===
   Mod+Page_Down      { focus-workspace-down; }
   Mod+Page_Up        { focus-workspace-up; }
-  Mod+U              { focus-workspace-down; }
-  Mod+I              { focus-workspace-up; }
+  // Mod+U              { focus-workspace-down; }
+  // Mod+I              { focus-workspace-up; }
   Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
   Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
   Mod+Ctrl+K     { move-column-to-workspace-up; }

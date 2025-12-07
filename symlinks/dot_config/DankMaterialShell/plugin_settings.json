@@ -8,7 +8,7 @@
   "commandRunner": {
     "enabled": true,
     "noTrigger": false,
-    "trigger": ":!",
+    "trigger": "/",
     "terminal": "ghostty",
     "history": [
       "niri msg action move-column-to-first"
@@ -27,16 +27,22 @@
     "terminalApp": "ghostty --hold"
   },
   "worldClock": {
-    "enabled": false,
-    "timezones": [
-      {
-        "timezone": "Europe/London",
-        "label": "UK"
-      }
-    ]
+    "enabled": true,
+    "timezones": []
   },
   "dankHooks": {
     "enabled": false,
     "wallpaperPath": "run-custom theme"
+  },
+  "displayMirror": {
+    "enabled": true
+  },
+  "easyEffects": {
+    "enabled": false,
+    "currentOutputIndex": -1,
+    "currentInputIndex": -1
+  },
+  "niriWindows": {
+    "enabled": false
   }
 }
