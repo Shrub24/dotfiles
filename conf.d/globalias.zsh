@@ -1,1 +1,0 @@
-GLOBALIAS_FILTER_VALUES=(grep ls)

@@ -1,1 +1,2 @@
 . "$HOME/.cargo/env"
+ZDOTDIR="$XDG_CONFIG_HOME/zshrc"
