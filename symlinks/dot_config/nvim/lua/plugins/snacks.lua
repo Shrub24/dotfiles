@@ -72,10 +72,39 @@ return {
 					},
 				},
 			},
-			explorer = { enabled = true },
+			explorer = {
+				replace_netrw = true,
+
+				layout = {
+					layout = {
+						position = "left",
+						width = 30,
+					},
+				},
+
+				keys = {
+					-- Edit Actions (The Oil way)
+					["cw"] = "rename",
+					["dd"] = "delete",
+					["yy"] = "copy",
+					["p"] = "paste",
+					["o"] = "add",
+
+					-- Navigation
+					["<CR>"] = "edit",
+					["l"] = "edit",
+					["h"] = "close",
+					["<Esc>"] = "close",
+				},
+			},
 			indent = { enabled = true },
 			input = { enabled = true },
-			picker = { enabled = true },
+			picker = {
+				enabled = true,
+				-- sources = {
+				-- 	explorer = { enabled = false },
+				-- },
+			},
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
 			scope = { enabled = true },

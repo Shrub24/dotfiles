@@ -22,3 +22,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[alias]
+  dv = "!nvim -c DiffviewOpen"
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "nvim -c DiffviewOpen $LOCAL $REMOTE"

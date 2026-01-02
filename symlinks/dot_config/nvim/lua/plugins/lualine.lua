@@ -44,6 +44,17 @@ return {
 			return string.rep(" ", padding)
 		end
 
+		local function diff_source()
+			local gitsigns = vim.b.gitsigns_status_dict
+			if gitsigns then
+				return {
+					added = gitsigns.added,
+					modified = gitsigns.changed,
+					removed = gitsigns.removed,
+				}
+			end
+		end
+
 		-- ========================================================================
 		-- 2. NEOPYWAL SETUP
 		-- ========================================================================
@@ -85,7 +96,8 @@ return {
 		-- LEFT (Branch/Diff) - Tracked
 		opts.sections.lualine_b = {
 			{
-				"branch",
+				"b:gitsigns_head",
+				icon = "",
 				fmt = function(str)
 					return track_width(str, "branch")
 				end,
@@ -95,6 +107,7 @@ return {
 				fmt = function(str)
 					return track_width(str, "diff")
 				end,
+				source = diff_source,
 			},
 		}
 

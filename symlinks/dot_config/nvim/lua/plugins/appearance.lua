@@ -58,6 +58,10 @@ return {
 					vim.api.nvim_set_hl(0, "RainbowBg" .. key, { bg = color, fg = c.background, bold = true })
 				end
 
+				vim.api.nvim_set_hl(0, "LspReferenceText", { bg = blend(c.color7, c.background, 0.4) })
+				vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = blend(c.color7, c.background, 0.4) })
+				vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = blend(c.color7, c.background, 0.4) })
+
 				local mode_map = {
 					Normal = rainbow.Blue,
 					Insert = rainbow.Orange,
@@ -66,6 +70,7 @@ return {
 					Replace = rainbow.Cyan,
 					Terminal = rainbow.Green,
 				}
+
 				for mode, color in pairs(mode_map) do
 					vim.api.nvim_set_hl(0, mode .. "Mode", { fg = color })
 
@@ -86,17 +91,35 @@ return {
 					fg = c.foreground,
 				})
 
-				vim.api.nvim_set_hl(0, "SidekickDiffAdd", {
-					bg = blend(c.color10, c.background, 0.4),
-				})
-
-				vim.api.nvim_set_hl(0, "SidekickDiffDelete", {
-					bg = blend(c.color9, c.background, 0.4),
-				})
+				-- vim.api.nvim_set_hl(0, "DiffAdd", {
+				-- 	bg = blend(c.color10, c.background, 0.4),
+				-- })
+				--
+				-- vim.api.nvim_set_hl(0, "DiffDelete", {
+				-- 	bg = blend(c.color9, c.background, 0.4),
+				-- })
 
 				vim.api.nvim_set_hl(0, "SidekickDiffContext", {
 					bg = blend(c.color7, c.background, 0.3),
 				})
+
+				vim.api.nvim_set_hl(0, "LuaLineDiffAdd", { fg = c.color10 })
+				vim.api.nvim_set_hl(0, "LuaLineDiffChange", { fg = c.background })
+				vim.api.nvim_set_hl(0, "LuaLineDiffDelete", { fg = c.color9 })
+				vim.api.nvim_set_hl(0, "SidekickDiffAdd", { link = "DiffAdd" })
+				vim.api.nvim_set_hl(0, "SidekickDiffDelete", { link = "DiffDelete" })
+
+				vim.api.nvim_set_hl(0, "GitSignsAddLn", { link = "DiffAdd" })
+				vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { bg = "NONE", fg = "NONE" })
+				vim.api.nvim_set_hl(
+					0,
+					"GitSignsDeleteVirtLn",
+					{ bg = blend(c.color9, c.background, 0.4), fg = c.background }
+				)
+
+				vim.api.nvim_set_hl(0, "GitSignsAddInline", { link = "DiffAdd" })
+				vim.api.nvim_set_hl(0, "GitSignsDeleteInline", { link = "DiffDelete" })
+				vim.api.nvim_set_hl(0, "GitSignsChangeInline", { link = "DiffChange" })
 			end
 
 			-- Run immediately & on update
@@ -152,14 +175,6 @@ return {
 		dependencies = {
 			"RedsXDD/neopywal.nvim",
 		},
-	},
-	{
-		"akinsho/bufferline.nvim",
-		config = function()
-			require("bufferline").setup({
-				highlights = require("neopywal.theme.plugins.bufferline").setup(),
-			})
-		end,
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",

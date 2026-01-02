@@ -23,7 +23,10 @@ return {
 					module = "blink-nerdfont",
 					name = "Nerd Fonts",
 					score_offset = 20, -- Tune by preference
-					opts = { insert = true },
+					opts = {
+						insert = true,
+						trigger = "!",
+					},
 				},
 				git = {
 					module = "blink-cmp-git",

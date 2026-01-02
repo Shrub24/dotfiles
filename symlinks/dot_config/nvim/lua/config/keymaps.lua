@@ -24,3 +24,29 @@ vim.keymap.set("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 vim.keymap.set("n", "<leader>rr", ":IncRename ")
 -- vim.keymap.set("n", "p", "=p", { desc = "Paste and indent" })
 -- vim.keymap.set("n", "P", "=P", { desc = "Paste before and indent" })
+vim.keymap.set("n", "<leader>ga", function()
+	Snacks.picker.git_status({
+		title = "Audit Agent Changes",
+		tree = true,
+		-- preview = "file",
+		-- preview_args = { "-U10000" },
+		on_show = function()
+			vim.cmd.stopinsert() -- Ensure normal mode
+		end,
+		layout = { preset = "sidebar", preview = "main" },
+		win = {
+			input = {
+				keys = {
+					["<Tab>"] = { "git_stage", mode = { "n", "i" } },
+				},
+			},
+			preview = {
+				minimal = false,
+				wo = {
+					signcolumn = "yes",
+					cursorline = true,
+				},
+			},
+		},
+	})
+end, { desc = "Audit Agent (Unstaged vs Staged)" })

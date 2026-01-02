@@ -124,7 +124,7 @@ config.initial_cols = 120
 config.use_fancy_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.8
 config.freetype_load_target = "HorizontalLcd" -- Makes fonts look bolder/sharper on high DPI
 config.freetype_render_target = "HorizontalLcd"
 

@@ -1,1 +1,0 @@
-(()=>{function i(){let t=window.location.hostname.toLowerCase().split("."),n=0,e=t[0];for(;["www","m"].includes(e);)n++,e=t[n];return e={playwestbet:"playwest",tradie:"tradiebet"}[e]||e,e.toLowerCase()}})();

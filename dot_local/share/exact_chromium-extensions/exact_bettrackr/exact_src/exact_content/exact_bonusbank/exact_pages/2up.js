@@ -1,6 +1,0 @@
-/*!
- * BetTrackr Chrome Extension (c) 2025 BetTrackr Pty Ltd
- * Licensed for use with a valid BetTrackr account only.
- * Reverse engineering or modification is prohibited.
- */
-function process2Up(t){const e=new Date,a=`${e.getDate()}-${e.getMonth()+1}-${e.getFullYear()}`,n=parseFloat($("#stake").val())||0,r=parseFloat($("#back-odds").val())||0,l=parseFloat($("#lay-stake").text())||0,o=parseFloat($("#lay-odds").val())||0,c=parseFloat($("#lay-commision").val())||0;if(!(n>0&&r>0&&o>0&&l>0))return"";const s=$("#bettrackr-selection").val();return`${a}\t"Bet365"\t"Qualifying"\t"Soccer"\t${$("#bettrackr-eventname").val()}\t${s}\t${n}\t${r}\t${l}\t${o}\t${c.toFixed(2)+"%"}`}async function run2Up(){const t=$(".result-label").filter(((t,e)=>"Copy Bet Tracker Row"===$(e).text().trim())),e=addBetTrackrButton(t,1,"2UP","mt-2 mb-4",process2Up,[]),a=$('<input type="hidden" id="bettrackr-selection" value="" />'),n=$('<input type="hidden" id="bettrackr-eventname" value="" />');$(e).append(a),$(e).append(n),$(document).on("click",".bb-rating a",(function(t){const e=$(this).data("selection"),a=$(this).data("event");$("#bettrackr-selection").val(e),$("#bettrackr-eventname").val(a)}))}

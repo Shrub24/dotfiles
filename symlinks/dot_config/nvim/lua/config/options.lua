@@ -16,6 +16,9 @@ vim.opt.backupdir = state_dir .. "backup"
 vim.opt.undofile = true
 vim.opt.undodir = state_dir .. "undo"
 --
+--
+vim.opt.scrolloff = 12
+--
 -- -- Make sure the directories exist
 -- if vim.fn.isdirectory(vim.opt.directory) == 0 then
 -- 	vim.fn.mkdir(vim.opt.directory, "p")

@@ -9,3 +9,5 @@ fi
 
 . "$HOME/.local/bin/env"
 . "$HOME/.cargo/env"
+
+source /home/saurabhj/.config/broot/launcher/bash/br
